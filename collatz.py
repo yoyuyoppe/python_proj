@@ -6,8 +6,12 @@ def collatz(number):
         return number // 2
     else:
         return 3 * number + 1
-
-num = int(input("Enter number: "))
+try:
+    num = int(input("Enter number: "))
+except ValueError:
+    print("Enter the integer")
+    exit()
+    
 while True:
     num = collatz(num)
     if num == 1:
